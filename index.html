@@ -6,116 +6,115 @@
 <title>Cyber Awareness Challenge</title>
 <style>
 body{
-    background:linear-gradient(135deg,#dbeafe,#f8fafc);
-    font-family:Arial,sans-serif;
+    margin:0;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    margin:0;
+    background:linear-gradient(135deg,#dbeafe,#fef3c7,#dcfce7);
+    font-family:Arial,sans-serif;
 }
-.box{
+.card{
     background:white;
-    width:390px;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.20);
+    max-width:520px;
+    width:90%;
+    padding:32px;
+    border-radius:22px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.22);
     text-align:center;
 }
 .badge{
+    display:inline-block;
     background:#e0f2fe;
     color:#0369a1;
-    padding:8px 12px;
-    border-radius:20px;
+    padding:8px 14px;
+    border-radius:999px;
     font-size:13px;
-    display:inline-block;
-    margin-bottom:12px;
+    margin-bottom:14px;
 }
-h2{margin-bottom:8px;color:#111827;}
-p{color:#4b5563;}
+h1{font-size:30px;margin:10px 0;color:#111827;}
+p{color:#374151;line-height:1.6;font-size:16px;}
 .fake-link{
+    display:inline-block;
+    margin:14px 0;
     color:#2563eb;
     text-decoration:underline;
-    cursor:pointer;
     font-weight:bold;
+    cursor:pointer;
 }
 input{
     width:100%;
-    padding:12px;
+    padding:13px;
     margin-top:10px;
-    border:1px solid #ccc;
-    border-radius:8px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
     box-sizing:border-box;
 }
 button{
-    width:100%;
-    padding:12px;
     margin-top:15px;
+    padding:13px 18px;
+    width:100%;
     background:#2563eb;
     color:white;
     border:none;
-    border-radius:8px;
-    cursor:pointer;
+    border-radius:12px;
     font-size:16px;
+    cursor:pointer;
 }
 button:hover{background:#1d4ed8;}
-#message{
+#lesson{
     display:none;
-    margin-top:20px;
+    margin-top:22px;
     background:#ecfdf5;
     border:1px solid #34d399;
-    padding:18px;
-    border-radius:12px;
+    border-radius:16px;
+    padding:20px;
     color:#065f46;
-    font-size:14px;
-    line-height:1.5;
-}
-.big{
-    font-size:28px;
-    font-weight:bold;
-    color:#047857;
-}
-.tips{
     text-align:left;
-    margin-top:12px;
 }
+.center{text-align:center;}
+.big{font-size:28px;font-weight:bold;}
+ul{padding-left:22px;}
+.small{font-size:13px;color:#6b7280;margin-top:20px;}
 </style>
 </head>
 <body>
-<div class="box">
-    <div class="badge">Mini Cybersecurity Challenge</div>
-    <h2>Account Verification</h2>
+<div class="card">
+    <div class="badge">Family & Friends Cyber Awareness</div>
+    <h1>⚠️ Quick Security Check</h1>
     <p>Something looks important. Would you click?</p>
 
-    <p><span class="fake-link" onclick="showHint()">Click here to continue verification</span></p>
+    <span class="fake-link" onclick="showLesson()">Click here to continue verification</span>
 
     <input type="text" placeholder="Email Address">
     <input type="password" placeholder="Password">
-    <button onclick="showMessage()">Sign In</button>
 
-    <div id="message">
-        <div class="big">🎉 Gotcha — Training Test!</div>
-        <br>
-        Hey, this is Nick 😄<br>
-        This was only a harmless cybersecurity awareness challenge.
-        <br><br>
-        No password was collected. Nothing was saved.
-        <div class="tips">
-            <strong>Cyber lesson:</strong><br>
-            ✅ Do not trust urgent login links<br>
-            ✅ Check the sender first<br>
-            ✅ Look carefully at the website address<br>
-            ✅ Never enter real passwords on random pages
-        </div>
+    <button onclick="showLesson()">Sign In</button>
+
+    <div id="lesson">
+        <div class="center big">🎉 GOTCHA — TRAINING DEMO!</div>
+        <p class="center"><strong>HEY, THIS IS NGSNET GEBREWOLD 😄</strong></p>
+        <p>
+            Do not click any link when you do not know the source. This was only a harmless cybersecurity awareness page to remind you to slow down and check before clicking.
+        </p>
+        <strong>Remember these safety rules:</strong>
+        <ul>
+            <li>Check who sent the link.</li>
+            <li>Do not trust urgent or scary messages.</li>
+            <li>Look carefully at the website address.</li>
+            <li>Never enter your real password after clicking a random link.</li>
+            <li>When unsure, ask the person directly before clicking.</li>
+        </ul>
+        <p class="center"><strong>No password was collected. Nothing was saved.</strong></p>
     </div>
+
+    <div class="small">Educational cybersecurity awareness project by Ngsnet Gebrewold.</div>
 </div>
 
 <script>
-function showMessage(){
-    document.getElementById("message").style.display="block";
-}
-function showHint(){
-    alert("Careful! This blue link is part of the training. Always check links before clicking.");
+function showLesson(){
+    document.getElementById("lesson").style.display="block";
+    document.getElementById("lesson").scrollIntoView({behavior:"smooth"});
 }
 </script>
 </body>
